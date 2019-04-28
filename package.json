@@ -1,6 +1,6 @@
 {
   "name": "pingo",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Love for NodeJS",
   "main": "src/core/main.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "publish": [
       {
         "provider": "github",
-        "token": "4ccc8f472a723467da3dc0f008fd53c8c53b330d"
+        "token": "f66bd77f8433c943286b03bda9ad4e647c80af55"
       }
     ]
   },
