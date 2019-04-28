@@ -30,10 +30,7 @@
       "type": "distribution"
     },
     "publish": [
-      {
-        "provider": "github",
-        "token": "05a85a40230cc65af72b9d099e31c6e29f8226a7"
-      }
+      "github"
     ]
   },
   "dependencies": {
