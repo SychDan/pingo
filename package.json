@@ -1,6 +1,6 @@
 {
   "name": "pingo",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Love for NodeJS",
   "main": "src/core/main.js",
   "scripts": {
@@ -12,13 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sandeep1995/pingo.git"
+    "url": "git+https://github.com/sychdan/pingo.git"
   },
   "author": "Sandeep Acharya",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.9",
-    "electron-builder": "^20.36.2"
+    "electron-log": "^3.0.5",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0"
   },
   "build": {
     "appId": "com.applyhead.pingo",
@@ -29,15 +30,18 @@
       "type": "distribution"
     },
     "publish": [
-      "github"
+      {
+        "provider": "github",
+        "token": "05a85a40230cc65af72b9d099e31c6e29f8226a7"
+      }
     ]
   },
   "dependencies": {
-    "electron-updater": "^4.0.4"
+    "electron-updater": "^4.0.6"
   },
   "bugs": {
-    "url": "https://github.com/sandeep1995/pingo/issues"
+    "url": "https://github.com/sychdan/pingo/issues"
   },
-  "homepage": "https://github.com/sandeep1995/pingo#readme",
+  "homepage": "https://github.com/sychdan/pingo#readme",
   "keywords": []
 }

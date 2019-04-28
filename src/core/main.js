@@ -1,7 +1,11 @@
 const { app, BrowserWindow } = require('electron')
 const { autoUpdater } = require("electron-updater")
+const log = require('electron-log')
 
 let win
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = "info";
+
 
 const dispatch = (data) => {
   win.webContents.send('message', data)
@@ -37,22 +41,27 @@ app.on('window-all-closed', () => {
 
 
 autoUpdater.on('checking-for-update', () => {
+  log.info("check")
   dispatch('Checking for update...')
 })
 
 autoUpdater.on('update-available', (info) => {
+  log.info("available")
   dispatch('Update available.')
 })
 
 autoUpdater.on('update-not-available', (info) => {
+  log.info("not-available")
   dispatch('Update not available.')
 })
 
 autoUpdater.on('error', (err) => {
+  log.error("error")
   dispatch('Error in auto-updater. ' + err)
 })
 
 autoUpdater.on('download-progress', (progressObj) => {
+  log.info("progress")
   // let log_message = "Download speed: " + progressObj.bytesPerSecond
   // log_message = log_message + ' - Downloaded ' + progressObj.percent + '%'
   // log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')'
@@ -63,5 +72,9 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 
 autoUpdater.on('update-downloaded', (info) => {
+  log.info("dowloaded")
+  setTimeout(function() {
+    autoUpdater.quitAndInstall();
+  }, 5000);
   dispatch('Update downloaded')
 })
